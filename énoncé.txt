@@ -1,0 +1,47 @@
+Mise en place de MON CV:
+Information nécessaire:
+-Photo de profil
+-Nom, Prénom, addresse mail, numéro de téléphone
+-Profil
+-Compétences ->Trouve le moyen d'y insérer la fibre entrepreuneuriale avec pour illustration l'enquête mené au
+                près d'une centaine d'entreprises en Guinée dont l'ANDE, Guilab, et d'autres entreprises pour 
+                avoir une idée des besoins des entreprises informatiques en Guinée avec les résultats étant en ta
+                possession. Bases en gestion de startup par la méthode LEAN
+
+
+
+Exigences:
+-Responsive (s'adapte à l'écran sur lequel il est lequel)
+-Les animations
+-Déposer sur github
+(Dans l'idéal manipuler le css dans javascript)
+
+
+***Idées personnelles: Pour le cv, je voudrais mettre un bouton pour ouvrir un autre aspect de "ma personne",
+moins professionnel. Et sur ce nouvel affichage il s'agira de montrer le Seb pas forcément professionnel 
+mais les aspects non économiques et plus sincères de ma personne.
+->Que mettre dans cet aspect de ma personne? -> Vu qu'il ne semble pas avoir demandé de section pour les passions
+                                                    je mettrai principalement mes passions sur cette page avec les
+                                                    détails mentionnés ci-dessous
+
+
+Design: couleur: noir(pour la partie professionnelle), bleu(vivant + océan pour la partie moins professionnelle)
+
+Steps à suivre:
+-Faire la structure de base partir de laquelle on ajoutera les modifications ->Jeudi
+-Boucler le reste ->vendredi
+
+    Animations: Chaque section réagira au hover (elle s'élevera comme pour sortir de l'écran.)
+                Quant à la photo de profil, lorsque la souris la survolera elle changera
+
+
+    Easter eggs: 
+        -Dans la partie moins professionnelle, en plus du fait que la section réagira au hover, le mot "lecture"
+         dans "mes passions" brillera puis si l'on clique dessus on est redirigé vers une image de tous les livres
+         que j'ai lu ainsi qu'un bref résumé de chacun d'eux. Pareil pour la production musicale, des images de mes prods.
+
+
+
+Nécessaires: 2 photos, les infos mises dans ton ancien CV, des images des livres que j'ai lu ainsi que les résumés
+            de ces livres, quelques images de mes prods avec de brèves explications.
+
