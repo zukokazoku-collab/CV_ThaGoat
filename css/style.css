@@ -207,10 +207,24 @@ body {
   justify-content: center;
   z-index: 1000;
   padding: 24px;
+  /* start hidden by opacity so we can animate */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 300ms ease, visibility 300ms ease;
 }
 
+.personal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* keep .hidden class for initial markup compatibility */
 .personal-overlay.hidden {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .personal-inner {
@@ -219,6 +233,12 @@ body {
   padding: 24px;
   max-width: 860px;
   width: 100%;
+  transform: translateY(8px);
+  transition: transform 320ms ease;
+}
+
+.personal-overlay.show .personal-inner {
+  transform: translateY(0);
 }
 
 .personal-inner .thumb {
