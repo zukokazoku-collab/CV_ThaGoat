@@ -178,3 +178,56 @@ body {
         padding: 24px;
     }
 }
+
+/* Buttons */
+.btn {
+  background: #005f73;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn.close {
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* personal overlay (full-screen) */
+.personal-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #005f73, #012a36);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.personal-overlay.hidden {
+  display: none;
+}
+
+.personal-inner {
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 860px;
+  width: 100%;
+}
+
+.personal-inner .thumb {
+  max-width: 140px;
+}
+
+/* elevated card on hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(24,42,74,0.12);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
