@@ -245,6 +245,22 @@ body {
   max-width: 140px;
 }
 
+/* sparkle effect for passion keywords */
+.passion { font-weight:700; cursor:pointer; color:#fff; }
+.passion.sparkle { 
+  background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.6), rgba(255,255,255,0.95));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+/* detail view inside overlay */
+.detail-view { margin-top: 12px; }
+.detail-content { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; }
+.detail-content .card { width: calc(50% - 12px); display:flex; gap:12px; align-items:flex-start }
+.detail-content .thumb { max-width:100px; flex-shrink:0 }
+
 /* elevated card on hover */
 .card:hover {
   transform: translateY(-8px);

@@ -82,16 +82,24 @@
 
 
     <div id="personalOverlay" class="personal-overlay hidden" aria-hidden="true">
-      <div class="personal-inner">
+      <div class="personal-inner" id="personalInner">
         <button id="closePersonal" class="btn close">Fermer</button>
         <h2>Le Seb (moins professionnel)</h2>
-        <div class="gallery">
-          <img src="../assets/book1.jpg" alt="Livre 1" class="thumb">
-          <img src="../assets/book2.jpg" alt="Livre 2" class="thumb">
+
+        <div id="passionsList" class="passions-list">
+          <p>Voici quelques passions :</p>
+          <ul>
+            <li><span class="passion sparkle-target" id="passion-lecture" tabindex="0">lecture</span></li>
+            <li><span class="passion sparkle-target" id="passion-music" tabindex="0">production musicale</span></li>
+            <li><span class="passion">voyages</span></li>
+            <li><span class="passion">photographie</span></li>
+          </ul>
         </div>
-        <div class="prods">
-          <h4>Productions musicales</h4>
-          <img src="../assets/prod1.jpg" alt="Prod 1" class="thumb">
+
+        <div id="detailView" class="detail-view hidden" aria-hidden="true">
+          <button id="backToPassions" class="btn">← Retour</button>
+          <h3 id="detailTitle"></h3>
+          <div id="detailContent" class="detail-content"></div>
         </div>
       </div>
     </div>
