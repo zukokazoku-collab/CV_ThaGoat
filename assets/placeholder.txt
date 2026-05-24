@@ -1,0 +1,1 @@
+Placez ici vos images : photo.jpg, photo-alt.jpg, book1.jpg, book2.jpg, prod1.jpg
