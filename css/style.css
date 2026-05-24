@@ -246,13 +246,13 @@ body {
 }
 
 /* sparkle effect for passion keywords */
-.passion { font-weight:700; cursor:pointer; color:#ffd700; }
+.passion { font-weight:700; cursor:pointer; color:#fff; }
 .passion.sparkle {
   background: linear-gradient(90deg, #ffd700 0%, #fff3a0 50%, #ffd700 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
   background-size: 200% 100%;
   animation: shimmer 1.0s linear infinite;
-  text-shadow: 0 0 6px rgba(255,215,0,0.6);
+  text-shadow: 0 0 8px rgba(255,215,0,0.8);
 }
 @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
 
