@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg: #f2f4f8;
+    --sidebar-bg: #152238;
+    --panel-bg: #ffffff;
+    --accent: #f2b63c;
+    --text: #1e2a3b;
+    --text-light: #76849b;
+    --border: #dfe3ea;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #e9eef7 0%, #f9fbff 100%);
+    color: var(--text);
+}
+
+.cv {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 30px;
+    max-width: 1140px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+}
+
+.sidebar {
+    background: var(--sidebar-bg);
+    border-radius: 32px;
+    padding: 32px 24px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.photo {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #4b5f9e, #9aaee0);
+    position: relative;
+    overflow: hidden;
+}
+
+/* make any image inside .photo fill the square without distortion */
+.photo { --photo-offset: 105px; /* change this value to shift image vertically (positive = move down) */ }
+
+.photo img, .photo #profilePhoto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* preserves aspect ratio and crops if needed */
+    object-position: 50% calc(50% + var(--photo-offset));
+    display: block;
+}
+
+.photo::after {
+    /* decorative overlay removed to avoid visible square under the photo */
+    content: '';
+    display: none;
+}
+
+/* ensure image sits under the decorative overlay */
+.photo img { z-index: 0; }
+
+
+.sidebar h1 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.role {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #d8dbe7;
+}
+
+.card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    padding: 20px;
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #d8dbe7;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.card ul li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.card ul li strong {
+    color: #ffffff;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.summary-card,
+.experience-card,
+.education-card {
+    background: var(--panel-bg);
+    border-radius: 32px;
+    padding: 32px;
+    box-shadow: 0 22px 60px rgba(24, 42, 74, 0.08);
+}
+
+.summary-card h2,
+.experience-card h2,
+.education-card h2 {
+    color: var(--text);
+}
+
+.summary-card p {
+    margin: 0;
+    line-height: 1.85;
+    color: var(--text-light);
+}
+
+.item {
+    margin-bottom: 22px;
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.item h3 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+    color: var(--text);
+}
+
+.meta {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.item p {
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+@media (max-width: 960px) {
+    .cv {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .sidebar {
+        padding: 24px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .summary-card,
+    .experience-card,
+    .education-card {
+        padding: 24px;
+    }
+}
+
+/* Buttons */
+.btn {
+  background: #005f73;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn.close {
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* personal overlay (full-screen) */
+.personal-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #005f73, #012a36);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  /* start hidden by opacity so we can animate */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.personal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* keep .hidden class for initial markup compatibility */
+.personal-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.personal-inner {
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 860px;
+  width: 100%;
+  transform: translateY(8px);
+  transition: transform 320ms ease;
+}
+
+.personal-overlay.show .personal-inner {
+  transform: translateY(0);
+}
+
+.personal-inner .thumb {
+  max-width: 140px;
+}
+
+/* sparkle effect for passion keywords */
+.passion { font-weight:700; cursor:pointer; color:#fff; }
+.passion.sparkle {
+  background: linear-gradient(90deg, #ffd700 0%, #fff3a0 50%, #ffd700 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  background-size: 200% 100%;
+  animation: shimmer 1.0s linear infinite;
+  text-shadow: 0 0 8px rgba(255,215,0,0.8);
+}
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+/* detail view inside overlay */
+.detail-view { margin-top: 12px; }
+.detail-content { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; max-height:60vh; overflow:auto; padding-right:8px; padding-bottom:32px; }
+.detail-content .card { width: calc(50% - 12px); display:flex; gap:12px; align-items:flex-start }
+.detail-content .thumb { max-width:100px; flex-shrink:0 }
+
+/* scrollbar (simple) */
+.detail-content::-webkit-scrollbar { width:10px }
+.detail-content::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 6px }
+
+/* elevated card on hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(24,42,74,0.12);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+/* utility: hide elements by adding .hidden */
+.hidden { display: none; }
+
+/* prefer specific rule for personal overlay to keep transitions (override above) */
+.personal-overlay.hidden {
+  display: block; /* keep it in layout so opacity/visibility transitions still work */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+

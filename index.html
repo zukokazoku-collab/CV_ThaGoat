@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mon CV</title>
+</head>
+<body>
+    <main class="cv">
+        <aside class="sidebar">
+            <div class="photo">
+                <img id="profilePhoto" src="img/me1.jpg" alt="Photo de profil">
+            </div>
+            <h1>SEBASTIEN ZEZE GUILAVOGUI</h1>
+            <p class="role">développeur web</p>
+
+            <section class="card contact-card">
+                <h2>Contact</h2>
+                <ul>
+                    <li><strong>Téléphone :</strong> 627447402</li>
+                    <li><strong>Email :</strong> zukokazoku@gmail.com</li>
+                    <li><strong>Adresse :</strong> yattayah fossidet</li>
+                    <li><strong>Âge :</strong> 21 ans</li>
+                </ul>
+            </section>
+
+            <section class="card skills-card">
+                <h2>Compétences</h2>
+                <ul>
+                    <li>Word : Avancé</li>
+                    <li>Excel : Intermédiaire</li>
+                    <li>Power point : Intermédiaire</li>
+                    <li>Conception de site web en JS : Intermédiaire</li>
+                    <li>Programmation orienté objet : Intermédiaire</li>
+                    <li>Conception de base de données (sql sous access, Oracle, sqlite3) : Intermédiaire</li>
+                </ul>
+            </section>
+
+            <section class="card languages-card">
+                <h2>Langues</h2>
+                <ul>
+                    <li>Anglais : Courant</li>
+                    <li>Français : Bilingue</li>
+                    <li>Soussou : Intermédiaire</li>
+                </ul>
+            </section>
+
+            <section class="card interests-card">
+                <h2>Centres d'intérêt</h2>
+                <ul>
+                    <li>Lecture</li>
+                    <li>Production musicale</li>
+                    <li>Peinture</li>
+                    <li>Psychologie</li>
+                    <li>Physique théorique</li>
+                    <li>Philosophie</li>
+                    <li>Sport</li>
+                </ul>
+            </section>
+        <button id="togglePersonal" class="btn open-personal">Mon côté perso</button>
+        </aside>
+
+        <section class="content">
+            <section class="card summary-card">
+                <h2>À propos de moi</h2>
+                <p>Étudiant en 3ème année de Génie Informatique à l'Université Kofi Annan et entrepreneur passionné. Autodidacte et polyvalent, je parle couramment l'anglais (avec des notions de japonais) et possède des compétences créatives en production musicale. Fort d'une étude de terrain menée auprès de plus de 100 entreprises informatiques en Guinée pour cerner les réalités du secteur, je suis activement à la recherche de nouveaux défis pour apporter des solutions technologiques innovantes et répondre aux besoins concrets du marché.</p>
+            </section>
+
+            <section class="card experience-card">
+                <h2>Expériences associatives et Bénévolat</h2>
+                <div class="item">
+                    <h3>Animateur</h3>
+                    <span class="meta">Otaku festi / Conakry · Janv. 2026 - Févr. 2026</span>
+                </div>
+            </section>
+
+            <section class="card education-card">
+                <h2>Diplômes et Formations</h2>
+                <div class="item">
+                    <h3>Ingénieur informaticien</h3>
+                    <span class="meta">Kofi annan / Conakry · Nov. 2023 Présent</span>
+                    <p>Actuellement en 3ème année du cycle d'ingénieur en informatique. Cette formation me permet d'acquérir un socle technique solide (développement, systèmes, gestion de projet) que j'enrichis continuellement grâce à mon approche autodidacte. Désireux de relier la théorie à la pratique, je profite de mon statut d'étudiant pour explorer l'écosystème technologique local. J'ai notamment réalisé des enquêtes auprès de plus d'une centaine d'entreprises guinéennes afin d'identifier les opportunités d'innovation sur le marché.</p>
+                </div>
+                <div class="item">
+                    <h3>Médecine</h3>
+                    <span class="meta">La Source / Conakry · Nov. 2020 - Juil. 2023</span>
+                    <ul>
+                        <li>Validation de 2 années d'études médicales, arrêtées en 3ème année pour des raisons personnelles.</li>
+                        <li>Formation m'ayant forgé une solide éthique de travail, de la rigueur et de la discipline.</li>
+                        <li>Excellente capacité de gestion du stress et d'apprentissage intensif, atouts majeurs que j'ai transférés vers ma passion pour le génie informatique.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>Baccalauréat scientifique</h3>
+                    <span class="meta">Saint Georges / Conakry · Oct. 2019 - Juil. 2020</span>
+                </div>
+            </section>
+        </section>
+    </main>
+
+
+
+    <div id="personalOverlay" class="personal-overlay hidden" aria-hidden="true">
+      <div class="personal-inner" id="personalInner">
+        <button id="closePersonal" class="btn close">Fermer</button>
+        <h2>Le Seb (moins professionnel)</h2>
+
+        <div id="passionsList" class="passions-list">
+          <p>Voici quelques passions :</p>
+          <ul>
+            <li><span class="passion sparkle-target" id="passion-lecture" tabindex="0">Lecture</span></li>
+            <li><span class="passion sparkle-target" id="passion-music" tabindex="0">Production musicale</span></li>
+            <li><span class="passion">Peinture</span></li>
+            <li><span class="passion">Psychologie</span></li>
+            <li><span class="passion">Physique théorique</span></li>
+            <li><span class="passion">Philosophie</span></li>
+            <li><span class="passion">Sport</span></li>
+          </ul>
+        </div>
+
+        <div id="detailView" class="detail-view hidden" aria-hidden="true">
+          <button id="backToPassions" class="btn">← Retour</button>
+          <h3 id="detailTitle"></h3>
+          <div id="detailContent" class="detail-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
