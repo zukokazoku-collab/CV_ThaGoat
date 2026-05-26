@@ -271,7 +271,7 @@ body {
 
 /* detail view inside overlay */
 .detail-view { margin-top: 12px; }
-.detail-content { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; max-height:60vh; overflow:auto; padding-right:8px; }
+.detail-content { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; max-height:60vh; overflow:auto; padding-right:8px; padding-bottom:32px; }
 .detail-content .card { width: calc(50% - 12px); display:flex; gap:12px; align-items:flex-start }
 .detail-content .thumb { max-width:100px; flex-shrink:0 }
 

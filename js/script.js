@@ -49,31 +49,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* Pasions: listing -> detail views */
   var books = [
-    { src: '../img/l1.jpg', title: 'Comment se faire des amis', summary: 'Résumé bref du livre 1.' },
-    { src: '../img/l2.jpg', title: 'système1 système2', summary: 'Résumé bref du livre 2.' },
-    { src: '../img/l3.jpg', title: 'Ne coupez jamais la poire en deux', summary: 'Résumé bref du livre 3.' },
-    { src: '../img/l4.jpg', title: 'Influence et manipulation', summary: 'Résumé bref du livre 4.' },
-    { src: '../img/l5.jpg', title: 'L\'égo est l\'enemi', summary: 'Résumé bref du livre 5.' },
-    { src: '../img/l6.jpg', title: 'L\'autoroute du millionaire', summary: 'Résumé bref du livre 6.' },
-    { src: '../img/l7.jpg', title: 'Good strategy / Bad strategy', summary: 'Résumé bref du livre 7.' },
-    { src: '../img/l8.jpg', title: 'The Lean Startup', summary: 'Résumé bref du livre 8.' },
-    { src: '../img/l9.jpg', title: 'Tyrann', summary: 'Résumé bref du livre 9.' },
-    { src: '../img/l10.jpg', title: 'Le robot qui rêvait', summary: 'Résumé bref du livre 10.' },
-    { src: '../img/l11.jpg', title: 'La mouche/ Dans la colonie pénitentiaire', summary: 'Résumé bref du livre 11.' },
-    { src: '../img/l12.jpg', title: 'La saga twilight', summary: 'Résumé bref du livre 12.' },
-    { src: '../img/l13.jpg', title: 'Jojo\'s bizarre adventure part VII', summary: 'Résumé bref du livre 13.' },
-    { src: '../img/l14.jpg', title: 'L\'Homme le plus riche de Babylone', summary: 'Résumé bref du livre 14.' },
-    { src: '../img/l15.jpg', title: 'A more beautiful question', summary: 'Résumé bref du livre 15.' },
-    { src: '../img/l16.jpg', title: 'The dance of leadership', summary: 'Résumé bref du livre 16.' },
-    { src: '../img/l17.jpg', title: 'Mind, society and behaviour', summary: 'Résumé bref du livre 17.' },
-    { src: '../img/l18.jpg', title: 'Initiation à l\'algorithmique et aux structures de données', summary: 'Résumé bref du livre 18.' },
-    { src: '../img/l19.jpg', title: 'Livre 19', summary: 'Et quelques autres livres que je n\'ai plus en ma possession.' },
+    { src: '../img/l1.jpg', title: 'Comment se faire des amis', summary: 'Une véritable claque sur l\'importance de l\'empathie au quotidien. J\'ai complètement revu ma façon d\'interagir avec les autres.' },
+    { src: '../img/l2.jpg', title: 'système1 système2', summary: 'Ce livre m\'a fasciné en m\'expliquant pourquoi mon cerveau me joue parfois des tours. C\'est fou de réaliser à quel point nos biais cognitifs influencent nos choix.' },
+    { src: '../img/l3.jpg', title: 'Ne coupez jamais la poire en deux', summary: 'Une approche de la négociation qui m\'a paru très contre-intuitive au départ, mais qui s\'avère redoutablement efficace.' },
+    { src: '../img/l4.jpg', title: 'Influence et manipulation', summary: 'J\'ai dévoré cet ouvrage pour enfin décrypter les mécanismes psychologiques qu\'on utilise pour nous persuader. Ça m\'a donné un regard beaucoup plus critique.' },
+    { src: '../img/l5.jpg', title: 'L\'égo est l\'enemi', summary: 'Une belle leçon d\'humilité qui m\'a rappelé que la fierté mal placée est souvent le plus grand frein à la réussite.' },
+    { src: '../img/l6.jpg', title: 'L\'autoroute du millionaire', summary: 'Une perspective assez brutale mais nécessaire sur l\'entrepreneuriat. Ça a vraiment bousculé ma vision classique du monde du travail.' },
+    { src: '../img/l7.jpg', title: 'Good strategy / Bad strategy', summary: 'Enfin un livre qui démythifie le mot "stratégie" et montre concrètement comment construire un plan d\'action qui tient la route.' },
+    { src: '../img/l8.jpg', title: 'The Lean Startup', summary: 'C\'est devenu ma bible pour tout nouveau projet : tester vite, échouer vite et itérer. L\'idée du produit minimum viable a changé ma façon de développer.' },
+    { src: '../img/l9.jpg', title: 'Tyrann', summary: 'J\'ai été happé par cet univers sombre et cette réflexion intense sur le pouvoir. Le genre de fiction qui laisse une trace bien après.' },
+    { src: '../img/l10.jpg', title: 'Le robot qui rêvait', summary: 'Asimov a ce don de poser des questions éthiques vertigineuses sous couvert de science-fiction. J\'ai adoré me perdre dans ces réflexions sur la conscience artificielle.' },
+    { src: '../img/l11.jpg', title: 'La mouche/ Dans la colonie pénitentiaire', summary: 'Deux nouvelles glaçantes qui m\'ont profondément marqué par leur atmosphère absurde et oppressante.' },
+    { src: '../img/l12.jpg', title: 'La saga twilight', summary: 'Une petite pause coupable et réconfortante que j\'assume totalement. J\'aime juste me laisser porter par l\'histoire de temps en temps.' },
+    { src: '../img/l13.jpg', title: 'Jojo\'s bizarre adventure part VII', summary: 'Sans doute l\'un de mes mangas préférés pour son originalité visuelle et son scénario imprévisible. La course à travers les États-Unis m\'a tenu en haleine jusqu\'au bout.' },
+    { src: '../img/l14.jpg', title: 'L\'Homme le plus riche de Babylone', summary: 'Des principes financiers vieux comme le monde mais tellement bien racontés. C\'est grâce à ces paraboles que j\'ai commencé à vraiment gérer mon budget.' },
+    { src: '../img/l15.jpg', title: 'A more beautiful question', summary: 'Ce livre m\'a fait réaliser qu\'on passe trop de temps à chercher des réponses au lieu de poser les bonnes questions.' },
+    { src: '../img/l16.jpg', title: 'The dance of leadership', summary: 'Une lecture inspirante qui aborde le leadership non pas comme un statut, mais comme un art subtil et en mouvement.' },
+    { src: '../img/l17.jpg', title: 'Mind, society and behaviour', summary: 'Plonger dans la psychologie comportementale à grande échelle m\'a ouvert les yeux sur la façon dont nos sociétés fonctionnent.' },
+    { src: '../img/l18.jpg', title: 'Initiation à l\'algorithmique et aux structures de données', summary: 'Un incontournable qui m\'a fait transpirer mais m\'a donné des bases solides. Je me sens beaucoup plus confiant face à un problème logique complexe depuis.' },
+    { src: '../img/l19.jpg', title: 'Quelques autres', summary: 'Juste un petit clin d\'œil à toutes ces autres lectures qui ont forgé mon esprit mais dont j\'ai oublié le titre ou prêté l\'exemplaire.' },
   ];
   var prods = [
-    { src: '../img/img_prod/img1.png', title: 'Prod 1', summary: 'Brève description de la production 1.' },
-    { src: '../img/img_prod/img2.png', title: 'Prod 2', summary: 'Brève description de la production 2.' },
-    { src: '../img/img_prod/img3.png', title: 'Prod 3', summary: 'Brève description de la production 3.' },
-    { src: '../img/img_prod/img4.png', title: 'Prod 4', summary: 'Brève description de la production 4.' }
+    { src: '../img/img_prod/img1.png', title: 'Prod 1', summary: 'Une production de beat de rap avec quelques sonorités électros' },
+    { src: '../img/img_prod/img2.png', title: 'Prod 2', summary: 'Une production inachevé dans le style maximaliste proche de celui de Kanye. Des prods à vous faire trembler des immeubles.' },
+    { src: '../img/img_prod/img3.png', title: 'Prod 3', summary: 'Une mélodie calme avec des sons de flûtes.' },
+    { src: '../img/img_prod/img4.png', title: 'Prod 4', summary: 'Une production plutôt apaisante me rappelant des vibes maritime (du genre de far solitaire perdu au milieu d\'un océan tranquille.)' }
   ];
 
   // Profile photo hover swap: change me1.jpg -> me2.jpg on hover, revert on leave
