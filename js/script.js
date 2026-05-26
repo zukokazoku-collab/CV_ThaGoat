@@ -49,33 +49,71 @@ document.addEventListener('DOMContentLoaded', function() {
 
   /* Pasions: listing -> detail views */
   var books = [
-    { src: '../assets/book1.svg', title: 'Livre 1', summary: 'Résumé bref du livre 1.' },
-    { src: '../assets/book2.svg', title: 'Livre 2', summary: 'Résumé bref du livre 2.' },
-    { src: '../assets/book3.svg', title: 'Livre 3', summary: 'Résumé bref du livre 3.' },
-    { src: '../assets/book4.svg', title: 'Livre 4', summary: 'Résumé bref du livre 4.' },
-    { src: '../assets/book5.svg', title: 'Livre 5', summary: 'Résumé bref du livre 5.' },
-    { src: '../assets/book6.svg', title: 'Livre 6', summary: 'Résumé bref du livre 6.' },
-    { src: '../assets/book7.svg', title: 'Livre 7', summary: 'Résumé bref du livre 7.' },
-    { src: '../assets/book8.svg', title: 'Livre 8', summary: 'Résumé bref du livre 8.' },
-    { src: '../assets/book9.svg', title: 'Livre 9', summary: 'Résumé bref du livre 9.' },
-    { src: '../assets/book10.svg', title: 'Livre 10', summary: 'Résumé bref du livre 10.' },
-    { src: '../assets/book11.svg', title: 'Livre 11', summary: 'Résumé bref du livre 11.' },
-    { src: '../assets/book12.svg', title: 'Livre 12', summary: 'Résumé bref du livre 12.' },
-    { src: '../assets/book13.svg', title: 'Livre 13', summary: 'Résumé bref du livre 13.' },
-    { src: '../assets/book14.svg', title: 'Livre 14', summary: 'Résumé bref du livre 14.' },
-    { src: '../assets/book15.svg', title: 'Livre 15', summary: 'Résumé bref du livre 15.' },
-    { src: '../assets/book16.svg', title: 'Livre 16', summary: 'Résumé bref du livre 16.' },
-    { src: '../assets/book17.svg', title: 'Livre 17', summary: 'Résumé bref du livre 17.' },
-    { src: '../assets/book18.svg', title: 'Livre 18', summary: 'Résumé bref du livre 18.' },
-    { src: '../assets/book19.svg', title: 'Livre 19', summary: 'Résumé bref du livre 19.' },
-    { src: '../assets/book20.svg', title: 'Livre 20', summary: 'Résumé bref du livre 20.' }
+    { src: '../img/l1.jpg', title: 'Comment se faire des amis', summary: 'Résumé bref du livre 1.' },
+    { src: '../img/l2.jpg', title: 'système1 système2', summary: 'Résumé bref du livre 2.' },
+    { src: '../img/l3.jpg', title: 'Ne coupez jamais la poire en deux', summary: 'Résumé bref du livre 3.' },
+    { src: '../img/l4.jpg', title: 'Influence et manipulation', summary: 'Résumé bref du livre 4.' },
+    { src: '../img/l5.jpg', title: 'L\'égo est l\'enemi', summary: 'Résumé bref du livre 5.' },
+    { src: '../img/l6.jpg', title: 'L\'autoroute du millionaire', summary: 'Résumé bref du livre 6.' },
+    { src: '../img/l7.jpg', title: 'Good strategy / Bad strategy', summary: 'Résumé bref du livre 7.' },
+    { src: '../img/l8.jpg', title: 'The Lean Startup', summary: 'Résumé bref du livre 8.' },
+    { src: '../img/l9.jpg', title: 'Tyrann', summary: 'Résumé bref du livre 9.' },
+    { src: '../img/l10.jpg', title: 'Le robot qui rêvait', summary: 'Résumé bref du livre 10.' },
+    { src: '../img/l11.jpg', title: 'La mouche/ Dans la colonie pénitentiaire', summary: 'Résumé bref du livre 11.' },
+    { src: '../img/l12.jpg', title: 'La saga twilight', summary: 'Résumé bref du livre 12.' },
+    { src: '../img/l13.jpg', title: 'Jojo\'s bizarre adventure part VII', summary: 'Résumé bref du livre 13.' },
+    { src: '../img/l14.jpg', title: 'L\'Homme le plus riche de Babylone', summary: 'Résumé bref du livre 14.' },
+    { src: '../img/l15.jpg', title: 'A more beautiful question', summary: 'Résumé bref du livre 15.' },
+    { src: '../img/l16.jpg', title: 'The dance of leadership', summary: 'Résumé bref du livre 16.' },
+    { src: '../img/l17.jpg', title: 'Mind, society and behaviour', summary: 'Résumé bref du livre 17.' },
+    { src: '../img/l18.jpg', title: 'Initiation à l\'algorithmique et aux structures de données', summary: 'Résumé bref du livre 18.' },
+    { src: '../img/l19.jpg', title: 'Livre 19', summary: 'Et quelques autres livres que je n\'ai plus en ma possession.' },
   ];
   var prods = [
-    { src: '../assets/prod1.svg', title: 'Prod 1', summary: 'Brève description de la production 1.' },
-    { src: '../assets/prod2.svg', title: 'Prod 2', summary: 'Brève description de la production 2.' },
-    { src: '../assets/prod3.svg', title: 'Prod 3', summary: 'Brève description de la production 3.' },
-    { src: '../assets/prod4.svg', title: 'Prod 4', summary: 'Brève description de la production 4.' }
+    { src: '../img/img_prod/img1.png', title: 'Prod 1', summary: 'Brève description de la production 1.' },
+    { src: '../img/img_prod/img2.png', title: 'Prod 2', summary: 'Brève description de la production 2.' },
+    { src: '../img/img_prod/img3.png', title: 'Prod 3', summary: 'Brève description de la production 3.' },
+    { src: '../img/img_prod/img4.png', title: 'Prod 4', summary: 'Brève description de la production 4.' }
   ];
+
+  // Profile photo hover swap: change me1.jpg -> me2.jpg on hover, revert on leave
+  var profilePhoto = document.getElementById('profilePhoto');
+  if (profilePhoto) {
+    var _origSrc = profilePhoto.getAttribute('src');
+    var _hoverSrc = _origSrc.replace('me1.jpg','me2.jpg');
+    // fallback: if replace did nothing, try different case
+    if (_hoverSrc === _origSrc) _hoverSrc = _origSrc.replace('me1.JPG','me2.jpg');
+
+    // handle vertical offset change while hovered
+    var photoContainer = profilePhoto.closest('.photo') || profilePhoto.parentElement;
+    var _origOffset = null;
+    if (photoContainer) {
+      _origOffset = getComputedStyle(photoContainer).getPropertyValue('--photo-offset');
+      _origOffset = (_origOffset || '').trim();
+      if (_origOffset === '') _origOffset = null; // means CSS fallback
+    }
+
+    var applyHoverState = function(){
+      profilePhoto.setAttribute('src', _hoverSrc);
+      if (photoContainer) photoContainer.style.setProperty('--photo-offset', '-40px');
+    };
+    var applyNormalState = function(){
+      profilePhoto.setAttribute('src', _origSrc);
+      if (photoContainer) {
+        if (_origOffset !== null) photoContainer.style.setProperty('--photo-offset', _origOffset);
+        else photoContainer.style.removeProperty('--photo-offset');
+      }
+    };
+
+    profilePhoto.addEventListener('mouseenter', applyHoverState);
+    profilePhoto.addEventListener('mouseleave', applyNormalState);
+    // keyboard accessibility
+    profilePhoto.addEventListener('focus', applyHoverState);
+    profilePhoto.addEventListener('blur', applyNormalState);
+    // touch devices: toggle on touchstart / touchend
+    profilePhoto.addEventListener('touchstart', function(e){ applyHoverState(); }, {passive:true});
+    profilePhoto.addEventListener('touchend', function(e){ applyNormalState(); }, {passive:true});
+  }
 
   var passionLecture = document.getElementById('passion-lecture');
   var passionMusic = document.getElementById('passion-music');
