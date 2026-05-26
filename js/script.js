@@ -76,6 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
     { src: '../img/img_prod/img4.png', title: 'Prod 4', summary: 'Une production plutôt apaisante me rappelant des vibes maritime (du genre de far solitaire perdu au milieu d\'un océan tranquille.)' }
   ];
 
+  // normalize any paths that still start with ../ so they work from root index.html
+  function _normalizePaths(items){
+    if(!items) return;
+    items.forEach(function(it){ if(it && it.src && it.src.indexOf('../')===0) it.src = it.src.replace(/^\.\.\//,''); });
+  }
+  _normalizePaths(books);
+  _normalizePaths(prods);
+
   // Profile photo hover swap: change me1.jpg -> me2.jpg on hover, revert on leave
   var profilePhoto = document.getElementById('profilePhoto');
   if (profilePhoto) {
@@ -153,6 +161,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if(passionLecture){ addSparkleHandlers(passionLecture); passionLecture.addEventListener('click', function(){ renderDetail(books,'Lecture'); }); }
   if(passionMusic){ addSparkleHandlers(passionMusic); passionMusic.addEventListener('click', function(){ renderDetail(prods,'Production musicale'); }); }
-  if(backBtn){ backBtn.addEventListener('click', function(){ if(detailView) detailView.classList.add('hidden'); detailView.setAttribute('aria-hidden','true'); if(passionsList) passionsList.classList.remove('hidden'); }); }
+  if(backBtn){
+    backBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      if(detailView) {
+        detailView.classList.add('hidden');
+        detailView.setAttribute('aria-hidden','true');
+      }
+      if(passionsList) passionsList.classList.remove('hidden');
+      // return focus to passions list for accessibility
+      if(passionsList) {
+        var firstPassion = passionsList.querySelector('.passion');
+        if(firstPassion && typeof firstPassion.focus === 'function') firstPassion.focus();
+      }
+    });
+  }
+
+  // Delegated handler as a fallback (works even if button is replaced dynamically)
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest ? e.target.closest('#backToPassions') : null;
+    if(!btn) return;
+    e.preventDefault();
+    if(detailView) {
+      detailView.classList.add('hidden');
+      detailView.setAttribute('aria-hidden','true');
+    }
+    if(passionsList) passionsList.classList.remove('hidden');
+    if(passionsList) {
+      var firstPassion = passionsList.querySelector('.passion');
+      if(firstPassion && typeof firstPassion.focus === 'function') firstPassion.focus();
+    }
+  });
 
 });

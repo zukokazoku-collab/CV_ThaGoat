@@ -285,3 +285,15 @@ body {
   box-shadow: 0 20px 30px rgba(24,42,74,0.12);
   transition: transform 200ms ease, box-shadow 200ms ease;
 }
+
+/* utility: hide elements by adding .hidden */
+.hidden { display: none; }
+
+/* prefer specific rule for personal overlay to keep transitions (override above) */
+.personal-overlay.hidden {
+  display: block; /* keep it in layout so opacity/visibility transitions still work */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
