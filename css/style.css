@@ -207,32 +207,47 @@ body {
 
 @media (max-width: 680px) {
     .cv {
-        grid-template-columns: 120px 1fr;
-        gap: 10px;
+        grid-template-columns: 100px 1fr;
+        gap: 8px;
+        padding: 0 5px;
     }
     
     .sidebar {
-        padding: 10px;
+        padding: 8px;
+        gap: 12px;
     }
 
     .sidebar h1 {
-        font-size: 1rem;
-    }
-
-    .card {
-        padding: 10px;
-    }
-
-    .card h2 {
-        font-size: 0.7rem;
-    }
-
-    .card ul li {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
+        word-break: break-word;
     }
 
     .role {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+    }
+
+    .card {
+        padding: 8px;
+    }
+
+    .card h2 {
+        font-size: 0.6rem;
+        margin-bottom: 8px;
+    }
+
+    .card ul li {
+        font-size: 0.65rem;
+        line-height: 1.2;
+        word-break: break-word;
+    }
+
+    .card ul li strong {
+        display: block;
+        font-size: 0.6rem;
+    }
+
+    .photo {
+        border-radius: 12px;
     }
 }
 
