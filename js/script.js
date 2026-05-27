@@ -103,7 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var applyHoverState = function(){
       profilePhoto.setAttribute('src', _hoverSrc);
-      if (photoContainer) photoContainer.style.setProperty('--photo-offset', '-40px');
+      if (photoContainer) {
+        var offset = window.innerWidth <= 680 ? '-15px' : '-40px';
+        photoContainer.style.setProperty('--photo-offset', offset);
+      }
     };
     var applyNormalState = function(){
       profilePhoto.setAttribute('src', _origSrc);
