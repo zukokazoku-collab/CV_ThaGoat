@@ -172,23 +172,67 @@ body {
 
 @media (max-width: 960px) {
     .cv {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 2fr;
+        gap: 15px;
+        margin: 10px auto;
+        padding: 0 10px;
     }
-}
-
-@media (max-width: 680px) {
+    
     .sidebar {
-        padding: 24px;
+        padding: 15px;
+        border-radius: 20px;
     }
 
-    .card {
-        padding: 18px;
+    .sidebar h1 {
+        font-size: 1.2rem;
+    }
+
+    .content {
+        gap: 15px;
     }
 
     .summary-card,
     .experience-card,
     .education-card {
-        padding: 24px;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .open-personal {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 680px) {
+    .cv {
+        grid-template-columns: 120px 1fr;
+        gap: 10px;
+    }
+    
+    .sidebar {
+        padding: 10px;
+    }
+
+    .sidebar h1 {
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .card h2 {
+        font-size: 0.7rem;
+    }
+
+    .card ul li {
+        font-size: 0.75rem;
+    }
+
+    .role {
+        font-size: 0.8rem;
     }
 }
 
@@ -219,7 +263,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 24px;
+  padding: 10px;
   /* start hidden by opacity so we can animate */
   opacity: 0;
   visibility: hidden;
@@ -243,7 +287,7 @@ body {
 .personal-inner {
   background: rgba(255,255,255,0.06);
   border-radius: 16px;
-  padding: 24px;
+  padding: 15px;
   max-width: 860px;
   width: 100%;
   transform: translateY(8px);
@@ -271,9 +315,9 @@ body {
 
 /* detail view inside overlay */
 .detail-view { margin-top: 12px; }
-.detail-content { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; max-height:60vh; overflow:auto; padding-right:8px; padding-bottom:32px; }
-.detail-content .card { width: calc(50% - 12px); display:flex; gap:12px; align-items:flex-start }
-.detail-content .thumb { max-width:100px; flex-shrink:0 }
+.detail-content { display:flex; flex-wrap:nowrap; gap:12px; margin-top:12px; max-height:60vh; overflow-x:auto; padding-bottom:20px; }
+.detail-content .card { flex: 0 0 280px; display:flex; gap:12px; align-items:flex-start; }
+.detail-content .thumb { max-width:80px; flex-shrink:0 }
 
 /* scrollbar (simple) */
 .detail-content::-webkit-scrollbar { width:10px }
@@ -295,5 +339,14 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+@media (max-width: 960px) {
+    .open-personal {
+        width: 100%;
+        padding: 16px;
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
 }
 
