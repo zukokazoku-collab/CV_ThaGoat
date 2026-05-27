@@ -248,6 +248,7 @@ body {
 
     .photo {
         border-radius: 12px;
+        --photo-offset: 30px;
     }
 }
 
